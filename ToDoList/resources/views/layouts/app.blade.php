@@ -30,7 +30,24 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav me-auto">
-
+                        <div class="container-fluid">
+                            <div class="collapse navbar-collapse" id="navbarNav">
+                              <ul class="navbar-nav">
+                                <li class="nav-item">
+                                  <a class="nav-link {{ Route::currentRouteNamed('index') ? 'active': ''}}" aria-current="page" href="#">Home</a>
+                                </li>
+                                <li class="nav-item">
+                                  <a class="nav-link {{ Route::currentRouteNamed('user.show') ? 'active': ''}}" href="#">Tasks</a>
+                                </li>
+                                <li class="nav-item">
+                                  <a class="nav-link {{ Route::currentRouteNamed('contact') ? 'active': ''}}" href="#">Categories</a>
+                                </li>
+                                <li class="nav-item">
+                                  <a class="nav-link {{ Route::currentRouteNamed('posts') ? 'active': ''}}" href="#">Calendar</a>
+                                </li>
+                              </ul>
+                            </div>
+                          </div>
                     </ul>
 
                     <!-- Right Side Of Navbar -->
