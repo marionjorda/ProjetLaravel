@@ -37,7 +37,7 @@
                                   <a class="nav-link {{ Route::currentRouteNamed('index') ? 'active': ''}}" aria-current="page" href="#">Home</a>
                                 </li>
                                 <li class="nav-item">
-                                  <a class="nav-link {{ Route::currentRouteNamed('user.show') ? 'active': ''}}" href="#">Tasks</a>
+                                  <a class="nav-link {{ Route::currentRouteNamed('tasks.index') ? 'active': ''}}" href="{{ route('tasks.index') }}">Tasks</a>
                                 </li>
                                 <li class="nav-item">
                                   <a class="nav-link {{ Route::currentRouteNamed('contact') ? 'active': ''}}" href="#">Categories</a>

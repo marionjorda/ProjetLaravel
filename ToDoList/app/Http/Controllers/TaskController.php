@@ -28,7 +28,12 @@ class TaskController extends Controller
 
         Task::create($request->all());
 
-        return redirect()->route('tasks.index')->with('success', 'Tâche créée avec succès');
+        return redirect()->route('tasks.index')->with('success', 'Task create');
+    }
+
+    public function show(Task $task)
+    {
+        return view('tasks.show', compact('task'));
     }
 
     public function edit(Task $task)
@@ -46,13 +51,13 @@ class TaskController extends Controller
 
         $task->update($request->all());
 
-        return redirect()->route('tasks.index')->with('success', 'Tâche mise à jour avec succès');
+        return redirect()->route('tasks.index')->with('success', 'Task update');
     }
 
     public function destroy(Task $task)
     {
         $task->delete();
 
-        return redirect()->route('tasks.index')->with('success', 'Tâche supprimée avec succès');
+        return redirect()->route('tasks.index')->with('success', 'Task delete');
     }
 }
