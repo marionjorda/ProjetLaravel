@@ -40,7 +40,7 @@
                                   <a class="nav-link {{ Route::currentRouteNamed('tasks.index') ? 'active': ''}}" href="{{ route('tasks.index') }}">Tasks</a>
                                 </li>
                                 <li class="nav-item">
-                                  <a class="nav-link {{ Route::currentRouteNamed('contact') ? 'active': ''}}" href="#">Categories</a>
+                                  <a class="nav-link {{ Route::currentRouteNamed('contact') ? 'active': ''}}" href="{{ route('categories.index') }}">Categories</a>
                                 </li>
                                 <li class="nav-item">
                                   <a class="nav-link {{ Route::currentRouteNamed('posts') ? 'active': ''}}" href="#">Calendar</a>
