@@ -17,11 +17,11 @@
         </thead>
         <tbody>
             @foreach($tasks as $task)
-                <tr>
+                <tr style="background-color: {{$task->category->color}}">
                     <td>{{ $task->id }}</td>
                     <td>{{ $task->name }}</td>
                     <td>{{ $task->date }}</td>
-                    <td>{{ $task->category }}</td>
+                    <td>{{ $task->category->name }}</td>
                     <td>
                         <a href="{{ route('tasks.show', $task->id) }}" class="btn btn-info">View</a>
                         <a href="{{ route('tasks.edit', $task->id) }}" class="btn btn-warning">Update</a>

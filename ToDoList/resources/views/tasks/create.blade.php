@@ -18,8 +18,12 @@
         </div>
     
         <div class="mb-3">
-            <label for="category" class="form-label">Category:</label>
-            <input type="text" class="form-control" id="category" name="category" required>
+            <label for="category">Catégorie:</label>
+            <select name="category" required>
+                @foreach ($categories as $category)
+                    <option value="{{ $category->id }}">{{ $category->name }}</option>
+                @endforeach
+            </select>
         </div>
     
         <button type="submit" class="btn btn-primary">Create task</button>

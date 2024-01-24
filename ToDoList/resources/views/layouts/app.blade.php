@@ -13,8 +13,15 @@
     <link rel="dns-prefetch" href="//fonts.bunny.net">
     <link href="https://fonts.bunny.net/css?family=Nunito" rel="stylesheet">
 
+    <!-- Styles -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{{ asset('path-to-your-styles/fullcalendar.css') }}">
+    
     <!-- Scripts -->
     @vite(['resources/sass/app.scss', 'resources/js/app.js'])
+    <script src="{{ asset('path-to-your-scripts/jquery.js') }}"></script>
+    <script src="{{ asset('path-to-your-scripts/fullcalendar.js') }}"></script>
+    <script src="{{ asset('path-to-your-scripts/daygrid.js') }}"></script>
 </head>
 <body>
     <div id="app">

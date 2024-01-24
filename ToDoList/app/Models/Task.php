@@ -8,5 +8,9 @@ use Illuminate\Database\Eloquent\Model;
 class Task extends Model
 {
     use HasFactory;
-    protected $fillable = ['name', 'date', 'category'];
+    protected $fillable = ['name', 'date', 'category_id'];
+    public function category()
+    {
+        return $this->belongsTo(Category::class);
+    }
 }

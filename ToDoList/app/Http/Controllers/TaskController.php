@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Category;
 use App\Models\Task;
 use Illuminate\Http\Request;
 
@@ -15,19 +16,23 @@ class TaskController extends Controller
 
     public function create()
     {
-        return view('tasks.create');
+        $categories = Category::all();
+        return view('tasks.create', compact('categories'));
     }
 
     public function store(Request $request)
     {
-        $request->validate([
+        $validated = $request->validate([
             'name' => 'required',
             'date' => 'required|date',
-            'category' => 'required',
+            'category' => 'required|exists:categories,id',
+        ]); 
+        print_r($validated);
+        Task::create([
+            'name' => $validated['name'],
+            'date' => $validated['date'],
+            'category_id' => $validated['category'],
         ]);
-
-        Task::create($request->all());
-
         return redirect()->route('tasks.index')->with('success', 'Task create');
     }
 
@@ -38,7 +43,8 @@ class TaskController extends Controller
 
     public function edit(Task $task)
     {
-        return view('tasks.edit', compact('task'));
+        $categories = Category::all();
+        return view('tasks.edit', compact('task', 'categories'));
     }
 
     public function update(Request $request, Task $task)
@@ -46,7 +52,7 @@ class TaskController extends Controller
         $request->validate([
             'name' => 'required',
             'date' => 'required|date',
-            'category' => 'required',
+            'category' => 'required|exists:categories,id',
         ]);
 
         $task->update($request->all());

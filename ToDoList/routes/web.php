@@ -31,3 +31,5 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 Route::resource('tasks', TaskController::class);
 
 Route::resource('categories', CategoryController::class);
+
+Route::get('/calendar', 'CalendarController@index')->name('calendar.index');
