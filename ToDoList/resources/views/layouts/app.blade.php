@@ -15,13 +15,9 @@
 
     <!-- Styles -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-    <link rel="stylesheet" href="{{ asset('path-to-your-styles/fullcalendar.css') }}">
     
     <!-- Scripts -->
     @vite(['resources/sass/app.scss', 'resources/js/app.js'])
-    <script src="{{ asset('path-to-your-scripts/jquery.js') }}"></script>
-    <script src="{{ asset('path-to-your-scripts/fullcalendar.js') }}"></script>
-    <script src="{{ asset('path-to-your-scripts/daygrid.js') }}"></script>
 </head>
 <body>
     <div id="app">
@@ -48,9 +44,6 @@
                                 </li>
                                 <li class="nav-item">
                                   <a class="nav-link {{ Route::currentRouteNamed('contact') ? 'active': ''}}" href="{{ route('categories.index') }}">Categories</a>
-                                </li>
-                                <li class="nav-item">
-                                  <a class="nav-link {{ Route::currentRouteNamed('posts') ? 'active': ''}}" href="#">Calendar</a>
                                 </li>
                               </ul>
                             </div>
